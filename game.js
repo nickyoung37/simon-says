@@ -13,6 +13,19 @@ $(document).keydown(function() {
         nextSequence();
         gamestart = true;
         $("h1").text("Level " + level);
+        $(".start").hide();
+            
+    }
+  
+  });
+
+$('.start').click(function() {
+    
+    if (gamestart === false) {
+        nextSequence();
+        gamestart = true;
+        $("h1").text("Level " + level);
+        $(".start").hide();
             
     }
   
@@ -57,7 +70,7 @@ function checkAnswer(lastIndex) {
             $("body").removeClass("game-over");
         }, 200);
 
-        $("h1").text("Game Over, Press Any Key to Restart");
+        $("h1").text("Game Over, Press Any Key or Click The Button to Restart");
         startOver();
     }
     
@@ -98,6 +111,7 @@ function startOver() {
     level = 0;
     gamePattern = [];
     gamestart = false;
+    $(".start").show();
 }
 
 function playLevel() {
